@@ -37,5 +37,5 @@ These insights empower stakeholders with key business metrics, enabling strategi
 
 -----------------------------------------------------------------------------------------
 
-##About Me
+###About Me
 Shivam Gupta | Final-year BS (Mathematics & Data Science) @ HBTU Kanpur, aspiring data analyst/scientist with a strong learning mindset and interest in turning data into actionable insights.
