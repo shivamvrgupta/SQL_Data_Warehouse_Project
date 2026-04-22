@@ -28,7 +28,6 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 #### Objective
 
 Develop SQL-based analytics to deliver detailed insights into:
-
 -Customer Behavior
 -Product Performance
 -Sales Trends
@@ -38,6 +37,7 @@ These insights empower stakeholders with key business metrics, enabling strategi
 -----------------------------------------------------------------------------------------
 
 ###About Me
+
 Shivam Gupta | Final-year BS (Mathematics & Data Science), HBTU Kanpur, 
 Aspiring Data Analyst / Data Scientist with strong interest in:
 - Data Analytics  
