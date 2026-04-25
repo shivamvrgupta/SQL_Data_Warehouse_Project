@@ -1,0 +1,95 @@
+# 📊 Data Catalog – Gold Layer
+
+## 🟡 Overview
+
+The **Gold Layer** represents the business-level data model designed for analytics and reporting.
+It contains curated **dimension tables** and **fact tables** used for insights, dashboards, and decision-making.
+
+---
+
+## 👤 1. gold.dim_customers
+
+**Purpose:**
+Stores customer details enriched with demographic and geographic information.
+
+**Columns:**
+
+| Column Name     | Data Type    | Description                      |
+| --------------- | ------------ | -------------------------------- |
+| customer_key    | INT          | Surrogate key for each customer  |
+| customer_id     | INT          | Unique customer identifier       |
+| customer_number | NVARCHAR(50) | Alphanumeric customer ID         |
+| first_name      | NVARCHAR(50) | Customer first name              |
+| last_name       | NVARCHAR(50) | Customer last name               |
+| country         | NVARCHAR(50) | Country of residence             |
+| marital_status  | NVARCHAR(50) | Marital status (Married, Single) |
+| gender          | NVARCHAR(50) | Gender (Male, Female, N/A)       |
+| birthdate       | DATE         | Date of birth (YYYY-MM-DD)       |
+| create_date     | DATE         | Record creation date             |
+
+---
+
+## 📦 2. gold.dim_products
+
+**Purpose:**
+Provides product-related information including classification and attributes.
+
+**Columns:**
+
+| Column Name          | Data Type    | Description                    |
+| -------------------- | ------------ | ------------------------------ |
+| product_key          | INT          | Surrogate key for each product |
+| product_id           | INT          | Unique product identifier      |
+| product_number       | NVARCHAR(50) | Product code                   |
+| product_name         | NVARCHAR(50) | Product name                   |
+| category_id          | NVARCHAR(50) | Category identifier            |
+| category             | NVARCHAR(50) | Product category (e.g., Bikes) |
+| subcategory          | NVARCHAR(50) | Product subcategory            |
+| maintenance_required | NVARCHAR(50) | Maintenance flag (Yes/No)      |
+| cost                 | INT          | Product cost                   |
+| product_line         | NVARCHAR(50) | Product line (Road, Mountain)  |
+| start_date           | DATE         | Product availability date      |
+
+---
+
+## 💰 3. gold.fact_sales
+
+**Purpose:**
+Stores transactional sales data used for business analysis.
+
+**Columns:**
+
+| Column Name   | Data Type    | Description                     |
+| ------------- | ------------ | ------------------------------- |
+| order_number  | NVARCHAR(50) | Sales order ID                  |
+| product_key   | INT          | Reference to product dimension  |
+| customer_key  | INT          | Reference to customer dimension |
+| order_date    | DATE         | Order date                      |
+| shipping_date | DATE         | Shipping date                   |
+| due_date      | DATE         | Payment due date                |
+| sales_amount  | INT          | Total sales amount              |
+| quantity      | INT          | Quantity sold                   |
+| price         | INT          | Price per unit                  |
+
+---
+
+## 🔗 Data Model Relationships
+
+* **gold.fact_sales** links to:
+
+  * **gold.dim_customers** via `customer_key`
+  * **gold.dim_products** via `product_key`
+
+---
+
+## ✅ Notes
+
+* All keys in dimension tables are **surrogate keys**
+* Dates follow **YYYY-MM-DD format**
+* This layer is optimized for:
+
+  * 📊 BI tools (Power BI, Tableau)
+  * 📈 Reporting
+  * 📉 Analytics
+
+---
